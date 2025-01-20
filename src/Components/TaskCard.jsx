@@ -19,19 +19,21 @@ const TaskCard = ({ task }) => {
   return (
     <div
       ref={drag} // Attach the drag ref to make this element draggable
-      className={`md:p-4 p-2 border rounded shadow hover:shadow-lg ${
+      className={` md:p-4 p-3 md:w-full w-28 md:m-0 mx-12 my-4 border rounded shadow hover:shadow-lg ${
         isDragging ? "opacity-50" : "opacity-100"
       }`}
     >
+      <div className="">
       <h2 className="font-bold">{task.title}</h2>
       <p>{task.description}</p>
       <p>Status: {task.status}</p>
       <button
         onClick={() => dispatch(toggleTaskStatus(task.id))}
-        className="p-2 md:mt-2 bg-blue-500 text-white md:px-4 md:py-2 rounded"
+        className="p-2 md:mt-2 mt-2 bg-blue-500 text-white md:px-4 md:py-2 rounded"
       >
         Status
       </button>
+      </div>
     </div>
   );
 };
