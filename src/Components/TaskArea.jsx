@@ -16,7 +16,7 @@ const TaskArea = () => {
   return (
     <div
       ref={drop}
-      className="w-full h-40 border-dashed border-2 border-gray-400 flex items-center justify-center"
+      className="md:w-full h-20 md:h-40 border-dashed border-2 border-gray-400 flex items-center justify-center"
     >
       Drag tasks here to mark as Completed
     </div>

@@ -10,7 +10,7 @@ const TaskDetails = () => {
   );
 
   return (
-    <div className="p-4">
+    <div className="md:p-4 p-2">
       {task ? (
         <>
           <h1>{task.title}</h1>

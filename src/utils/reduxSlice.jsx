@@ -6,6 +6,7 @@ const initialState = {
     { id: 1, title: "Complete Assignment", description: "Frontend task", status: "In Progress" },
     { id: 2, title: "Review Code", description: "Check PRs", status: "In Progress" },
   ],
+  theme: "light",
 };
 
 const tasksSlice = createSlice({
@@ -22,8 +23,11 @@ const tasksSlice = createSlice({
       const task = state.tasks.find((t) => t.id === action.payload);
       if (task) task.status = "Completed";
     },
+    toggleTheme: (state) => {
+        state.isDarkMode = !state.isDarkMode; // Toggle the theme state
+    },
   },
 });
 
-export const { toggleTaskStatus, completeTask } = tasksSlice.actions;
+export const { toggleTaskStatus, completeTask, toggleTheme } = tasksSlice.actions;
 export default tasksSlice.reducer;
